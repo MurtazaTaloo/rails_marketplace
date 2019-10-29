@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  bundle: false
+  title: MyString
+  gender: 1
+  description: MyText
+  price: 1.5
+  category: one
+  size: one
+  brand: one
+  rating: 1.5
+  sold_status: false
+  rating_score: 1
+  rated_status: false
+
+two:
+  user: two
+  bundle: false
+  title: MyString
+  gender: 1
+  description: MyText
+  price: 1.5
+  category: two
+  size: two
+  brand: two
+  rating: 1.5
+  sold_status: false
+  rating_score: 1
+  rated_status: false
