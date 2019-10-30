@@ -37,7 +37,7 @@
      options_for_select( Size.all.collect { |s| [s.name, s.id] }, :selected => @listing.size_id ) %>
     </div></br>
 
- <div>
+    <div>
         <%= form.label :picture %>
         <%= form.file_field :picture, accept: 'image/png, image/gif, image/jpeg, image/jpg' %>
     </div> 
