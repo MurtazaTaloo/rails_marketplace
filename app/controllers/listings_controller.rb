@@ -3,7 +3,15 @@ class ListingsController < ApplicationController
   end
 
   def new
+    @listing = Listing.new
+    @bundle = params[:bundle]
   end
+
+  def create
+    @listing = current_user.listings.create(listing_params)
+    render new_listing_path
+  end
+  
 
   def show
   end
@@ -12,5 +20,16 @@ class ListingsController < ApplicationController
   end
 
   def delete
+  end
+
+  def type_selection
+    
+  end
+  
+  
+
+  private
+  def listing_params
+    params.require(:listing).permit(:title, :description, :price, :category_id, :brand_id, :size_id, :breed_id)
   end
 end
