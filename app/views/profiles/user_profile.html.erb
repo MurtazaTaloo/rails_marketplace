@@ -1,0 +1,10 @@
+<h1>from user profile<h1>
+
+<h2>Current Listings<h2>
+<% current_user.listings.each do |l| %>
+<%= l.title %></br>
+<%= l.description %></br>
+<%= l.price %></br>
+<% end %>
+
+<%= current_user.address %>

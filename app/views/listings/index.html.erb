@@ -1,16 +1,23 @@
 <h1>Listings#index</h1>
 
  <% @listings.each do |l| %>
-  <div class="index-listing">
-    <% l.pictures.each do |pic|
-     %>
- 
-    <%= image_tag  pic,class:"show-image", class:"index-pix" %>
+    <% if !l.sold_status %>
+      <div class="index-listing">
+        <% l.pictures.each do |pic|
+        %>
     
-     <% end %>
-    <h4> <%= l.title %></h4>
-    <h4> <%= l.id %></h4>
-    <h6> <%= l.description %></h6>
-    <h6> <%= l.price %></h6></br>
-  </div>
+        <%= image_tag  pic,class:"show-image", class:"index-pix" %>
+        
+        <% end %>
+        <h4> <%= l.title %></h4>
+        <h4> <%= l.id %></h4>
+        <h6> <%= l.description %></h6>
+        <h6> <%= l.price %></h6></br>
+        <% if current_user.id == l.user_id %>
+        <%= (link_to "Edit", edit_listing_path(l.id), :class => "btn" )  %>
+        <%= (link_to "Delete", listing_path(l.id), method: :delete, :class => "btn")  %>
+        <% end %>
+        <%= (link_to "Show", listing_path(l.id), :class => "btn") %>
+      </div>
+    <% end %>
  <% end %> 

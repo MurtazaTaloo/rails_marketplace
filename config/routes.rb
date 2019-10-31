@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "pages#home"
   
+  get 'profiles/user_profile', to: "profiles#user_profile"
+  
   get 'pages/home'
   get 'pages/about_us'
   get 'pages/contact_us'

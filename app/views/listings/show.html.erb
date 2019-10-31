@@ -4,8 +4,9 @@
 <%= @listing.description %>
 <%= @listing.price %>
 <% @listing.pictures.each do |pic| %>
-<%= image_tag  pic,class:"show-image", class:"index-pix" %>
+  <%= image_tag  pic,class:"show-image", class:"index-pix" %>
 <% end %>
 
+</br>
 
-
+<%= link_to "Buy it",  listing_path(id: @listing.id, sold_status: true), method: :put %>
