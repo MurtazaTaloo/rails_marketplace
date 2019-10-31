@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ .index-pix{
+   height: 200px;
+   width: 200px;
+ }
+
+ .index-listing{
+   background: lightseagreen;
+   margin-bottom: 20px;
+ }

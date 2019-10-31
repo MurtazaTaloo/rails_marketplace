@@ -1,2 +1,11 @@
 <h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+
+<%= @listing.title %>
+<%= @listing.description %>
+<%= @listing.price %>
+<% @listing.pictures.each do |pic| %>
+<%= image_tag  pic,class:"show-image", class:"index-pix" %>
+<% end %>
+
+
+

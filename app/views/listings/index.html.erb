@@ -1,2 +1,16 @@
 <h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+
+ <% @listings.each do |l| %>
+  <div class="index-listing">
+    <% l.pictures.each do |pic|
+     %>
+ 
+    <%= image_tag  pic,class:"show-image", class:"index-pix" %>
+    
+     <% end %>
+    <h4> <%= l.title %></h4>
+    <h4> <%= l.id %></h4>
+    <h6> <%= l.description %></h6>
+    <h6> <%= l.price %></h6></br>
+  </div>
+ <% end %> 

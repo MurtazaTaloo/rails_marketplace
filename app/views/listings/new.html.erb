@@ -18,18 +18,21 @@
         <%= form.label :price %></br>
         <%= form.number_field :price %>
     </div>
-   
-    <div>
-        <%= form.label :category_id %></br>
-        <%= form.select :category_id,
-     options_for_select( Category.all.collect { |c| [c.name, c.id] }, :selected => @listing.category_id ) %>
-    </div>
 
-     <div>
-        <%= form.label :brand_id %></br>
-        <%= form.select :brand_id,
-     options_for_select( Brand.all.collect { |b| [b.name, b.id] }, :selected => @listing.brand_id ) %>
-    </div>
+     <% if @bundle == false %>
+      
+      <div>
+          <%= form.label :category_id %></br>
+          <%= form.select :category_id,
+        options_for_select( Category.all.collect { |c| [c.name, c.id] }, :selected => @listing.category_id ) %>
+      </div>
+
+        <div>
+          <%= form.label :brand_id %></br>
+          <%= form.select :brand_id,
+        options_for_select( Brand.all.collect { |b| [b.name, b.id] }, :selected => @listing.brand_id ) %>
+      </div>
+    <% end %>
 
      <div>
         <%= form.label :size_id %></br>
@@ -39,7 +42,7 @@
 
     <div>
         <%= form.label :picture %>
-        <%= form.file_field :picture, accept: 'image/png, image/gif, image/jpeg, image/jpg' %>
+        <%= form.file_field :pictures, accept: 'image/png, image/gif, image/jpeg, image/jpg', multiple: true %>
     </div> 
 
 
