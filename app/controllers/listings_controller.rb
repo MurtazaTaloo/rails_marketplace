@@ -30,8 +30,7 @@ class ListingsController < ApplicationController
     if params["sold_status"]
       @listing.sold_status = true
       @listing.save
-    else
-      @listing.update(listing_params)
+      Transaction.create(user_id: current_user.id, listing_id: @listing.id)
     end 
   end
 
