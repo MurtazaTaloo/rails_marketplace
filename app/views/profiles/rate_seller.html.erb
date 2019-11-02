@@ -1,0 +1,14 @@
+<h1>This is from rate user page<h1>
+
+<%= form_with(model: @user, url: rate_seller_path, local: true) do |form| %>
+
+ <div>
+    <%= form.label :rating_score_total %></br>
+      <%= form.select :rating_score_total, options_for_select(1..5) %>
+  </div></br> 
+  <%= form.hidden_field :user_id, :value => params[:user]%>
+  <div>
+    <%= form.submit"rate" %>
+  </div>
+ 
+<% end %>

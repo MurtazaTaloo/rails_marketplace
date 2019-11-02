@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
   
   def user_profile
-    # @transactions = current_user.transactions
     @current_listings = current_user.listings.map do |l|
       if l.sold_status == nil
         l
@@ -23,11 +22,26 @@ class ProfilesController < ApplicationController
         return listing.price
       end
     end
+  end
+
+  def rate_seller
+    # @user = User.find(params[:user])
+    # byebug
+  end
+
+  def rate_score
+    @user = User.find(params[:user_id])
+
+    # score = @user.rating_score_total
     
+    @user.rating_score_total = params[:rating_score_total]
+    @user.save
 
-
+    raise
+    # @user.rating_score_total + params[rating_score_total]
   end
 
 end
 
+# <ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"5eL1LZ5D/04teku+afi2DND/UsT3qdbbze6xIDNCW0DLv29aUPtUU5FBAHFGr1o9/ekdaDd9SrRR1gkizk9ffA==", "rating_score_total"=>"1", "user_id"=>"2", "commit"=>"rate", "controller"=>"profiles", "action"=>"rate_score"} permitted: false>
 

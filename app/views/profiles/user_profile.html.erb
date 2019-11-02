@@ -32,13 +32,14 @@
   <% listing.pictures.each do |pic| %>
     <%= image_tag  pic,class:"show-image", class:"index-pix" %>
   <% end %></br>
+  <%= link_to "Rate the seller of this listing", profiles_user_profile_rate_seller_path(user: listing.user) %>
 <% end %>
 
 </br></br>
 
 
 
-
+<h1>Sold Listings:<h1>
 <% @sold_listings.each do |listing|%>
   <%= listing.title %>
   <%= listing.description %>
