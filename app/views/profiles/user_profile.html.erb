@@ -5,6 +5,7 @@
 <%= current_user.rating %>
 <%= @purchases.length %>
 <%= @sold_listings.length %>
+<%= @user_rating %>
 <% if @sales != nil %>
   <%= @sales.sum %>
 <% end %>
@@ -26,13 +27,17 @@
 
 <h1>Purchases:<h1>
 <% @purchases.each do |listing| %>
-  <%= listing.title %>
-  <%= listing.description %>
-  <%= listing.price %></br>
-  <% listing.pictures.each do |pic| %>
-    <%= image_tag  pic,class:"show-image", class:"index-pix" %>
+  <% if listing != nil %>
+    <%= listing.title %>
+    <%= listing.description %>
+    <%= listing.price %></br>
+    <% listing.pictures.each do |pic| %>
+      <%= image_tag  pic,class:"show-image", class:"index-pix" %>
   <% end %></br>
-  <%= link_to "Rate the seller of this listing", profiles_user_profile_rate_seller_path(user: listing.user) %>
+    <%if listing.rated_status != true %>
+      <%= link_to "Rate the seller of this listing", profiles_user_profile_rate_seller_path(user: listing.user, listing_id: listing.id) %>
+    <% end %>
+  <% end %>
 <% end %>
 
 </br></br>
@@ -41,10 +46,12 @@
 
 <h1>Sold Listings:<h1>
 <% @sold_listings.each do |listing|%>
-  <%= listing.title %>
-  <%= listing.description %>
-  <%= listing.price %></br>
-  <% listing.pictures.each do |pic| %>
-    <%= image_tag  pic,class:"show-image", class:"index-pix" %>
-  <% end %></br>
+  <% if listing != nil %>
+    <%= listing.title %>
+    <%= listing.description %>
+    <%= listing.price %></br>
+    <% listing.pictures.each do |pic| %>
+      <%= image_tag  pic,class:"show-image", class:"index-pix" %>
+    <% end %></br>
+  <% end %>
 <% end %>

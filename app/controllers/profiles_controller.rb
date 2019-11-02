@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
   
   def user_profile
+    @user_rating = current_user.rating_scores_array.sum / current_user.rating_scores_array.length.to_f
+    
     @current_listings = current_user.listings.map do |l|
       if l.sold_status == nil
         l
@@ -25,20 +27,19 @@ class ProfilesController < ApplicationController
   end
 
   def rate_seller
-    # @user = User.find(params[:user])
-    # byebug
+
   end
 
   def rate_score
     @user = User.find(params[:user_id])
+    @listing = Listing.find(params[:listing_id])
 
-    # score = @user.rating_score_total
-    
-    @user.rating_score_total = params[:rating_score_total]
+    @user.rating_scores_array << params[:rating_scores_array]
     @user.save
 
-    raise
-    # @user.rating_score_total + params[rating_score_total]
+    @listing.rated_status = true
+    @listing.save
+
   end
 
 end

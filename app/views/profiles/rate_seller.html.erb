@@ -3,10 +3,14 @@
 <%= form_with(model: @user, url: rate_seller_path, local: true) do |form| %>
 
  <div>
-    <%= form.label :rating_score_total %></br>
-      <%= form.select :rating_score_total, options_for_select(1..5) %>
+    <%= form.label :rating_scores_array %></br>
+      <%= form.select :rating_scores_array, options_for_select(1..5) %>
   </div></br> 
+
   <%= form.hidden_field :user_id, :value => params[:user]%>
+
+  <%= form.hidden_field :listing_id, :value => params[:listing_id]%>
+
   <div>
     <%= form.submit"rate" %>
   </div>
