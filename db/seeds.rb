@@ -25,3 +25,6 @@
   Size.create(name: "Size3")
   Size.create(name: "Size4")
   Size.create(name: "Size5")
+
+  # counter = 1
+  # User.create(email: "#{counter}@#{counter}.com", encrypted_password: "password")

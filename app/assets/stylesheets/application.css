@@ -17,13 +17,45 @@
  .index-pix{
    height: 200px;
    width: 200px;
+   object-fit: cover;
  }
 
- .index-listing{
-   background: rgb(177, 221, 219);
-   margin-bottom: 20px;
- }
+.card-img-top{
+  height: 300px;
+}
+.card{
+  min-height: 350px;
+  min-width: 300px;
+  margin-right: 20px;
+}
 
- body{
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- }
+.container-fluid{
+  display: flex;
+  overflow-x: auto;
+  justify-content: space-between;
+}
+
+
+.main-container{
+  display: grid;
+  grid-template-columns: 20% auto;
+  overflow: hidden;
+
+}
+
+.user-profile{
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80vh;
+  position: -webkit-sticky;
+  position: sticky;
+}
+.listings-container{
+  overflow: scroll;
+}
+
+.form{
+  margin-left: 20px;
+}

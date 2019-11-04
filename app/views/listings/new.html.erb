@@ -1,52 +1,51 @@
-<h1>Listings#new</h1>
-<p>Find me in app/views/listings/new.html.erb</p>
+
+<div class="form">
+  <%= form_with(model: @listing, local: true) do |form| %>
 
 
-<%= form_with(model: @listing, local: true) do |form| %>
-
-
-    <div>
-        <%= form.label :title %>
-        </br>
-        <%= form.text_field :title %>
-    </div>
-    <div>
-        <%= form.label :description %></br>
-        <%= form.text_area :description %>
-    </div>
-    <div>
-        <%= form.label :price %></br>
-        <%= form.number_field :price %>
-    </div>
-
-     <% if @bundle == false %>
-      
-      <div>
-          <%= form.label :category_id %></br>
-          <%= form.select :category_id,
-        options_for_select( Category.all.collect { |c| [c.name, c.id] }, :selected => @listing.category_id ) %>
+      <div class="form-group">
+          <%= form.label :title %>
+          </br>
+          <%= form.text_field :title %>
+      </div>
+      <div class="form-group">
+          <%= form.label :description %></br>
+          <%= form.text_area :description %>
+      </div>
+      <div class="form-group">
+          <%= form.label :price %></br>
+          <%= form.number_field :price %>
       </div>
 
-        <div>
-          <%= form.label :brand_id %></br>
-          <%= form.select :brand_id,
-        options_for_select( Brand.all.collect { |b| [b.name, b.id] }, :selected => @listing.brand_id ) %>
+      <% if @bundle == false %>
+        
+        <div class="form-group">
+            <%= form.label :category_id %></br>
+            <%= form.select :category_id,
+          options_for_select( Category.all.collect { |c| [c.name, c.id] }, :selected => @listing.category_id ) %>
+        </div>
+
+          <div class="form-group">
+            <%= form.label :brand_id %></br>
+            <%= form.select :brand_id,
+          options_for_select( Brand.all.collect { |b| [b.name, b.id] }, :selected => @listing.brand_id ) %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+          <%= form.label :size_id %></br>
+          <%= form.select :size_id,
+      options_for_select( Size.all.collect { |s| [s.name, s.id] }, :selected => @listing.size_id ) %>
+      </div></br>
+
+      <div class="form-group"> 
+          <%= form.label :picture %>
+          <%= form.file_field :pictures, accept: 'image/png, image/gif, image/jpeg, image/jpg', multiple: true %>
+      </div> 
+
+
+      <div class="form-group">
+          <%= form.submit"Create", :class => "btn btn-primary" %>
       </div>
-    <% end %>
-
-     <div>
-        <%= form.label :size_id %></br>
-        <%= form.select :size_id,
-     options_for_select( Size.all.collect { |s| [s.name, s.id] }, :selected => @listing.size_id ) %>
-    </div></br>
-
-    <div>
-        <%= form.label :picture %>
-        <%= form.file_field :pictures, accept: 'image/png, image/gif, image/jpeg, image/jpg', multiple: true %>
-    </div> 
-
-
-    <div>
-        <%= form.submit"Create", :class => "btn" %>
-    </div>
-<% end %>
+  <% end %>
+</div>

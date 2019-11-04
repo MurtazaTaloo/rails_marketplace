@@ -4,18 +4,22 @@
     <title>MarketPlace</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   <% if user_signed_in? %>
-    <%= link_to "logout", destroy_user_session_path, :class => "btn", method: :delete %></br>
-    <h3><%= current_user.name %><h3>
+    <%= link_to "logout", destroy_user_session_path, :class => "btn btn-secondary active", method: :delete %>
+    <h6>User name:<%= current_user.name %><h6>
   <% else %>
-    <%= link_to "login", new_user_session_path, :class => "btn" %>
+    <%= link_to "login", new_user_session_path, :class => "btn btn-secondary active" %>
   <% end %>
+  <%= link_to "Home", pages_home_path, :class => "btn btn-primary" %>
+  <%= link_to "Shop", listings_path, :class => "btn btn-primary" %>
+  <%= link_to "User_Profile", profiles_user_profile_path, :class => "btn btn-primary" %>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
@@ -24,3 +28,4 @@
   
   </body>
 </html>
+

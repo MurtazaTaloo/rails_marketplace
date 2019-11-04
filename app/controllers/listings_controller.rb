@@ -23,6 +23,16 @@ class ListingsController < ApplicationController
   def create
     @listing = current_user.listings.create(listing_params)
     # render listing_path
+    redirect_to listings_path
+  end
+
+  
+  def show
+    @listing = Listing.find(params[:id])
+  end
+  
+  def edit
+    @listing = Listing.find(params[:id])
   end
 
   def update
@@ -31,15 +41,10 @@ class ListingsController < ApplicationController
       @listing.sold_status = true
       @listing.save
       Transaction.create(user_id: current_user.id, listing_id: @listing.id)
-    end 
-  end
-
-  def show
-    @listing = Listing.find(params[:id])
-  end
-
-  def edit
-    @listing = Listing.find(params[:id])
+    else
+      @listing.update(listing_params)
+    end
+    redirect_to listings_path 
   end
 
   def delete
