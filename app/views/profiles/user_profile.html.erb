@@ -5,7 +5,7 @@
 <%= current_user.rating %>
 <%= @purchases.length %>
 <%= @sold_listings.length %>
-<%= @user_rating %>
+<%= current_user.rating %>
 <% if @sales != nil %>
   <%= @sales.sum %>
 <% end %>
@@ -21,6 +21,7 @@
     <%= l.price %></br>
   <% end %>
 <% end %>
+<h1>--------------------------------------</h1>
 </br></br>
 
 
@@ -34,10 +35,12 @@
     <% listing.pictures.each do |pic| %>
       <%= image_tag  pic,class:"show-image", class:"index-pix" %>
   <% end %></br>
-    <%if listing.rated_status != true %>
+    <% if listing.rated_status != true %>
       <%= link_to "Rate the seller of this listing", profiles_user_profile_rate_seller_path(user: listing.user, listing_id: listing.id) %>
     <% end %>
   <% end %>
+  <h1>--------------------------------------</h1>
+  <%raise%>
 <% end %>
 
 </br></br>
@@ -54,4 +57,5 @@
       <%= image_tag  pic,class:"show-image", class:"index-pix" %>
     <% end %></br>
   <% end %>
+  <h1>--------------------------------------</h1>
 <% end %>
