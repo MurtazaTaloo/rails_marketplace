@@ -24,12 +24,16 @@
   height: 300px;
 }
 .card{
-  min-height: 350px;
+  min-height: 300px;
   min-width: 300px;
   margin-right: 20px;
 }
+.card:hover{
+  /* transform: scale(1.01); */
+  box-shadow: -1px 2px 14px 0px rgba(0,0,0,0.42);
+}
 
-.container-fluid{
+/* .container-fluid{
   display: flex;
   overflow-x: auto;
   justify-content: space-between;
@@ -54,8 +58,8 @@
 }
 .listings-container{
   overflow: scroll;
-}
+} */
 
-.form{
+/* .form{
   margin-left: 20px;
-}
+} */
