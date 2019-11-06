@@ -12,9 +12,11 @@
         <h4 class="card-title"><%= l.id %></h4>
         <h6 class="card-text"><%= l.description %></h6>
         <h6 class="card-text"><%= l.price %></h6></br>
-        <% if current_user.id == l.user_id %>
-        <%= (link_to "Edit", edit_listing_path(l.id), :class => "btn btn-primary" )  %>
-        <%= (link_to "Delete", listing_path(l.id), method: :delete, :class => "btn btn-primary")  %>
+        <% if current_user %>
+          <% if current_user.id == l.user_id %>
+          <%= (link_to "Edit", edit_listing_path(l.id), :class => "btn btn-primary" )  %>
+          <%= (link_to "Delete", listing_path(l.id), method: :delete, :class => "btn btn-primary")  %>
+          <% end %>
         <% end %>
         <%= (link_to "Show", listing_path(l.id), :class => "btn btn-primary") %>
     <% end %>

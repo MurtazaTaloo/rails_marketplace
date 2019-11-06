@@ -1,13 +1,9 @@
 class ListingsController < ApplicationController
   # before_action :listing_params
+  before_action :authenticate_user!,except: :index
   def index
     @listings = Listing.all
     @is_sold = params[:sold_status]
-    # if @is_sold == "true"
-    #   @is_sold = true
-    # else
-    #   @is_sold = false
-    # end
   end
 
   def new
@@ -32,19 +28,30 @@ class ListingsController < ApplicationController
   end
   
   def edit
-    @listing = Listing.find(params[:id])
+    # only allows user to access the edit page of his own listings
+    if current_user.id == Listing.find(params[:id]).user.id
+      @listing = Listing.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def update
+    # execute "if" if coming from buy page and execut "else" if coming from edit page
     @listing = Listing.find(params[:id])
     if params["sold_status"]
       @listing.sold_status = true
       @listing.save
       Transaction.create(user_id: current_user.id, listing_id: @listing.id)
+      if @listing.save
+        redirect_to listings_path
+      else
+        redirect_to edit_listing_path
+      end
     else
       @listing.update(listing_params)
+      redirect_to listings_path 
     end
-    redirect_to listings_path 
   end
 
   def delete

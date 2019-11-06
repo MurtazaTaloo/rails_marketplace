@@ -1,12 +1,62 @@
-<h1>Listings#show</h1>
+<%
+=begin%>
+ <h1>Listings#show</h1>
 
+ <div class="container">
+  <div class="details">
 <%= @listing.title %>
 <%= @listing.description %>
 <%= @listing.price %>
-<% @listing.pictures.each do |pic| %>
-  <%= image_tag  pic,class:"show-image", class:"index-pix" %>
-<% end %>
 
 </br>
 
-<%= link_to "Buy it",  listing_path(id: @listing.id, sold_status: true), method: :put, class:"btn btn-primary" %>
+<%= link_to "Buy it",  listing_path(id: @listing.id, sold_status: true), method: :put, class:"btn btn-primary" %> 
+</div>
+
+  <div class="pic">
+<% @listing.pictures.each do |pic| %>
+  <%= image_tag  pic,class:"show-image", class:"index-pix" %>
+<% end %>
+ </div>
+</div> 
+<%
+=end%>
+
+
+<div class="container" id="product-section">
+  <div class="row">
+   <div class="col-md-5">
+    <% @listing.pictures.each do |pic| %>
+      <%= image_tag  pic,class:"show-image", class:"product-pix" %>
+      <% break %>
+    <% end %>
+   </div>
+   <div class="col-md-5">
+
+    <div class="row">
+      <div class="col-md-20">
+      <h1><%= @listing.title %></h1>
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-20">
+        <p class="description"><%= @listing.description %></p>
+    </div>
+   </div>
+
+   <div class="row">
+    <div class="col-md-20 bottom-rule">
+      <h2 class="product-price"><%= @listing.price %></h2>
+    </div>
+  </div>
+  <% if current_user.id != @listing.user.id && @listing.sold_status != true %>
+    <div class="row">
+      <div class="col-md-20 bottom-rule">
+        <h2 class="product-price"><%= link_to "Buy it",  listing_path(id: @listing.id, sold_status: true), method: :put, class:"btn btn-primary" %> </h2>
+      </div>
+    </div>
+  <% end %>
+   </div>
+  </div>
+ </div>

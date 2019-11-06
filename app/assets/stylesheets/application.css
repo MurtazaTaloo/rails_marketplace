@@ -17,7 +17,11 @@
  .index-pix{
    height: 200px;
    width: 200px;
-   object-fit: cover;
+ }
+
+ .product-pix{
+   height: 400px;
+   width: 400px;
  }
 
 .card-img-top{
@@ -30,6 +34,15 @@
 }
 .card:hover{
   /* transform: scale(1.01); */
+  box-shadow: -1px 2px 14px 0px rgba(0,0,0,0.42);
+}
+
+#product-section{
+  background: rgb(210, 218, 202);
+}
+
+.container{
+  height: 60vh;
   box-shadow: -1px 2px 14px 0px rgba(0,0,0,0.42);
 }
 
