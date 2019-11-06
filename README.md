@@ -23,6 +23,35 @@ Things you may want to cover:
 
 * ... -->
 
-Identification of the problem you are trying to solve by building this particular marketplace app.
+R7 Identification of the problem you are trying to solve by building this particular marketplace app.
 
-We are living in times of excessive consumerism at the cost of our home which we all call planet earth. Climate change is real???. But not many people are much about it. We are producing more consumer goods than ever did.
+
+I am building this marketplace to let people buy and sell second hand clothes. Upon searching I didn't come across any marketplace which is purely dedicated to dealing in second hand clothes even though it is a multi billion dollar market. Ideally such a marketplace should deal in used clothes for all ages but to start with this matketplace would only deal with clothes for kids as they quickly grow out of their clothes and need new clothes.
+
+
+
+
+R8 Why is it a problem that needs solving?
+
+We are living in times of excessive consumerism at the cost of our home which we all call planet earth. Climate change is real???. But not many people are doing much about it. We are producing more consumer goods than ever did. So far we have been accusing big businesses and corporations so employ environmentally friendly production paractises which has shown no improvment. I think we should be focussing on the other end of this spectrum which is equally responsible for this issue which is consumers. 
+We should focus all the resources to create awareness in people about this deadly climate change and the things causing it. This is a small effort towards encouraging people to reduce thier carbon footprint by trading thier clothes on a market place which only deals in used clothes.
+
+
+
+R11 Description of your marketplace app (website), including:
+- Purpose
+- Functionality / features
+- Sitemap
+- Screenshots
+- Target audience
+- Tech stack (e.g. html, css, deployment platform, etc)
+
+PURPOSE
+??
+
+FUNCTIONALITY/FEATURES
+- User can inspect all the available listings for sale
+- User can inspect the details of individial listings
+- User can buy the listings
+- User can rate the other users they have bought the items from
+- User can access his personalised profile page where he can see a lot of useful information like 

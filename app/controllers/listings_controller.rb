@@ -18,7 +18,6 @@ class ListingsController < ApplicationController
 
   def create
     @listing = current_user.listings.create(listing_params)
-    # render listing_path
     redirect_to listings_path
   end
 
