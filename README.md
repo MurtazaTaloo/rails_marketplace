@@ -47,11 +47,37 @@ R11 Description of your marketplace app (website), including:
 - Tech stack (e.g. html, css, deployment platform, etc)
 
 PURPOSE
-??
+As mentioned above the purpose of this application is to provide a market place for the people to buy and sell second hand clothes. So potentially  you just pay for the postage and trade your clothes for different clothes.
 
 FUNCTIONALITY/FEATURES
 - User can inspect all the available listings for sale
+- User can sign up for and new account
+- User can login with their existing account
 - User can inspect the details of individial listings
 - User can buy the listings
 - User can rate the other users they have bought the items from
 - User can access his personalised profile page where he can see a lot of useful information like 
+    - His rating
+    - Total number of listings sold
+    - Totoal number of listings purchased
+    - Total revenue made in $ amount
+    - Current listings
+    - Sold listings
+    - Purchased listings.
+- User can create a new listing to sell (2 types of listings) with the capability to upload pictures
+    - can create a listing to sell individual dress
+    - can create a listing to sell a bundle of clothes
+- User can edit their listings
+- User can delete their listings    
+
+TARGET AUDIENCE
+For this particular industry the target market would be mothers with children.
+
+TECH STACK
+- HTML
+- CSS
+- Bootstrap
+- Ruby on rails
+- Heroku for deployment
+- Amazon S3 for saving pictures
+

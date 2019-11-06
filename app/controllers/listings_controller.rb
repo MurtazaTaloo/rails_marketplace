@@ -36,7 +36,7 @@ class ListingsController < ApplicationController
   end
 
   def update
-    # execute "if" if coming from buy page and execut "else" if coming from edit page
+    # execute "if" if coming from buy page and execute "else" if coming from edit page
     @listing = Listing.find(params[:id])
     if params["sold_status"]
       @listing.sold_status = true
