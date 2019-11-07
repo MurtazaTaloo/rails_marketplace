@@ -104,3 +104,44 @@ As Seller:
 - 
 
 
+R15 Explain the different high-level components (abstractions) in your app
+
+Rails is full of features that hide compexity of code by doing a lot of important stuff in the background. Few high-level abstraction I used in building this app are as follows:
+* **Form helper** makes the code look cleaner as there is less typing compared to regular html. It helped me with the following thigs:
+    - bind form the model object to the form.
+    - created form fields like text_field, text_area, file_field
+    - made selection boxes
+
+* **Resource routing** made life a lot easier by providing 7 different routes and mapping them to different HTTP verbs. 
+
+Typing 
+```
+resources :listings
+```
+
+Provided the following: 
+```
+get 'listings' => 'listings#index'
+get 'listings/new' => 'listings#new'
+post 'listings' => 'listings#create'
+get 'listings/:id' => 'listings#show'
+get 'listings/:id/edit' => 'listings#edit'
+patch 'listings/:id' => 'listings#update'
+delete 'listings/:id' => listings#destroy
+```
+Using resourceful routing also provided me with the path and url helpers which are a lot easier to type and read.
+
+* **Active record** which is the object relational mapping for Rails helped me with:
+    - Performing database operation like creating, editing , deleting and showing records  with using any databsae language.
+    - Representing relationships between different models
+    - Validating data before it gets stored in database
+
+* **Devise User** creates a model with a lot of functinality. I created a User model with devise which allows a user on this platform to:
+    - Register, edit and delete their account.
+    - Login and logout of the account.
+    - Reset password if forgotten.
+It also provides helper methods like **current_user** where the attributes of a logged in user can be accessed throughout the application. Another useful helper method I used is **authenticate_user!** which blocks access to certain pages if the user isn't logged in.    
+
+
+R16 	Detail any third party services that your app will use
+
