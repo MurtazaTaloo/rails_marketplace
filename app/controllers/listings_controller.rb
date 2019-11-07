@@ -1,13 +1,17 @@
 class ListingsController < ApplicationController
-  # before_action :listing_params
+
+  # this blocks access to all pages in listings cntroller except index unless the user is signed in.
   before_action :authenticate_user!,except: :index
+  
   def index
     @listings = Listing.all
-    @is_sold = params[:sold_status]
+    # @is_sold = params[:sold_status]
   end
 
   def new
     @listing = Listing.new
+
+    # if user choses to list a bundle of drsses then @bundle stores ture and user is served the form for creating a bundle listing
     @bundle = params[:bundle]
     if @bundle == "true"
       @bundle = true
@@ -18,6 +22,7 @@ class ListingsController < ApplicationController
 
   def create
     @listing = current_user.listings.create(listing_params)
+    byebug
     redirect_to listings_path
   end
 
@@ -36,9 +41,10 @@ class ListingsController < ApplicationController
   end
 
   def update
-    # execute "if" if coming from buy page and execute "else" if coming from edit page
+    # executes "if" if coming from buy page and executes "else" if coming from edit page
     @listing = Listing.find(params[:id])
     if params["sold_status"]
+      # sold_status of the chosen listing is turns to true and transaction is created for the bought listing.
       @listing.sold_status = true
       @listing.save
       Transaction.create(user_id: current_user.id, listing_id: @listing.id)
@@ -63,7 +69,7 @@ class ListingsController < ApplicationController
   end
 
   def type_selection
-    
+    #lets a user chose the type of listing they want to create.
   end
   
   

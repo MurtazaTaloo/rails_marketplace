@@ -17,6 +17,12 @@
           <%= form.number_field :price %>
       </div>
 
+
+      <%
+=begin%>
+ only show these fields (in if-else statement) if the user doesn't chose to create a bundle listing 
+<%
+=end%>
       <% if @bundle == false %>
         
         <div class="form-group">

@@ -1,6 +1,11 @@
 <h1>Listings#index</h1>
  <% @listings.each do |l| %>
     <div class="container-fluid">
+    <%
+=begin%>
+ don't show listings if their sold_status is "true"     
+<%
+=end%>
     <% if !l.sold_status %>
       <div class="card" style="width: 18rem;">
         <% l.pictures.each do |pic|

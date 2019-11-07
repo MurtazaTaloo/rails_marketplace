@@ -197,3 +197,7 @@ R18	Discuss the database relations to be implemented in your application
 6. Size</br>
 - A size can have no or multiple listings.
 
+
+R19 	Provide your database schema design
+
+( to be provided after making any required changes to the schema design )

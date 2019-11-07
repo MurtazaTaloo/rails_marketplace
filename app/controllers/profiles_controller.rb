@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   
   def user_profile
-    
+    authenticate_user!
     @current_listings = []
     current_user.listings.each do |l|
       if l.sold_status == nil
