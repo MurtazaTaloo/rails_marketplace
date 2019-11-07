@@ -45,9 +45,8 @@ class ProfilesController < ApplicationController
     @listing.rated_status = true
     @listing.save
     
+    redirect_to profiles_user_profile_path
   end
 
 end
-
-# <ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"5eL1LZ5D/04teku+afi2DND/UsT3qdbbze6xIDNCW0DLv29aUPtUU5FBAHFGr1o9/ekdaDd9SrRR1gkizk9ffA==", "rating_score_total"=>"1", "user_id"=>"2", "commit"=>"rate", "controller"=>"profiles", "action"=>"rate_score"} permitted: false>
 

@@ -81,3 +81,26 @@ TECH STACK
 - Heroku for deployment
 - Amazon S3 for saving pictures
 
+USER STORIES
+
+As Buyer:
+- I want to be able to look at whats availbale in market before I have to sign up so I don't waste my time.
+- I want a simple sign up process so I don't have to provide unnecessary details.
+- I would like to see the pictures of the products before I buy them to avoid surprises when I receive products.
+- I want to see the rating score of sellers on the platform so I can make a good buying decision.
+- I want to be able to rate the sellers of my products so I can provide a quick feedback about my experience.
+<!-- - I want to see how much I am spending on the platform so I can better track my spending habits. -->
+<!-- - I want to be able to sort and filter the items availabel on the market -->
+- I want to see all my purchases in one place so I can keep the record of all the things I have bought.
+
+As Seller:
+- I want a quick sign up process with minimum details required to get me started on the platform.
+- I would like to able to track and manage all my activities from one page so I don't waste time looking for important stuff.
+- I would like to be able to sell an individual dress or a bundle/bag of dresses.
+- I would like to see my current itmes for sale, the items I have sold and the items I have purchased so I can have a record of my acitivy on the platform.
+- I want to quickly see my total spendings and earnings in $ amount so I know how much I am benefiting by using this platform.
+<!-- - I want a simple process to delete my account from the platform. -->
+<!-- - I would like to see rating score of my individual listings so I know how to improve. -->
+- 
+
+
