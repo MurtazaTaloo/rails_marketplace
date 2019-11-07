@@ -1,27 +1,4 @@
-<!-- # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ... -->
 
 R7 Identification of the problem you are trying to solve by building this particular marketplace app.
 
@@ -74,6 +51,7 @@ TARGET AUDIENCE
 For this particular industry the target market would be mothers with children.
 
 TECH STACK
+- Ruby on Rails
 - HTML
 - CSS
 - Bootstrap
@@ -144,4 +122,78 @@ It also provides helper methods like **current_user** where the attributes of a 
 
 
 R16 	Detail any third party services that your app will use
+
+Amazon S3 bucket:
+It is a cloud storage solution provided by AWS (Amazon Web Services). I have used it to store all the images which will be uploaded by users for thier listings.
+
+Heroku:
+Heroku is a cloud platform as a service (PaaS) which lets developers build, run and scale applications. I have used heroku to deploy my rails app as it uses Git as the primary means for deploying applications.
+
+Github:
+GitHub is a Git repository hosting service which I have used to store my rails app on. Github provides a very easy to use graphical inteface to track the progress of your project and it has a lot of other functionality including serving as a backup if you happen to lose your source files.
+
+R17 Describe your projects models in terms of the relationships (active record associations) they have with each other
+
+I have used the following models in my app:
+1. User</br>
+Where a User:
+
+    - has_many :listings
+    - has_many :transactions
+    
+2. Listing</br>
+Where a Listing:
+
+    - belongs_to :user
+    - belongs_to :category
+    - belongs_to :size
+    - belongs_to :brand
+    - has_many_attached :pictures
+
+3. Brand</br>
+Where a Brand:
+
+    - has_many :listings
+
+4. Category</br>
+Where a Category:
+
+    - has_many :listings
+
+5. Size</br>
+Where a Size:
+
+    - has_many :listings
+
+6. Transaction</br>
+Where Transaction:
+    - belongs_to :listing
+    - belongs_to :user
+
+
+R18	Discuss the database relations to be implemented in your application
+
+1. User</br>
+- Each user can have no or many listings.
+- A user can have no or many transactions. 
+
+2. Listing</br>
+- A listing can have one or no tranactions.
+- A listing must belong to only one user.
+- A listing can belong to one or no category.
+- A listing can belong to one or no brand.
+- A listing must belong to one size.
+
+3. Transaction</br>
+- A transaction must belong to a user.
+- A transaction must belong to a listing.
+
+4. Category</br>
+- A category can have no or multiple listings.
+
+5. Brand</br>
+- A brand can have no or multiple listings.
+
+6. Size</br>
+- A size can have no or multiple listings.
 
