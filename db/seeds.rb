@@ -26,5 +26,10 @@
   Size.create(name: "Size4")
   Size.create(name: "Size5")
 
-  # counter = 1
-  # User.create(email: "#{counter}@#{counter}.com", encrypted_password: "password")
+  counter = 1
+  10.times do
+  User.create(email: "#{counter}@#{counter}.com", password: "password", name: "#{counter}name", address:"#{counter}address")
+
+  counter += 1
+  end
+  puts "seeds completed"
