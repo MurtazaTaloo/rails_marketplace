@@ -21,9 +21,12 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = current_user.listings.create(listing_params)
-    byebug
-    redirect_to listings_path
+    @listing = current_user.listings.new(listing_params)
+    if @listing.save
+      redirect_to listings_path
+    else
+      render :new
+    end
   end
 
   
