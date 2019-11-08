@@ -5,7 +5,9 @@
     <h6>Name: <%= current_user.name %></h6>
     <h6>Email: <%= current_user.email %></h6>
     <h6>Address: <%= current_user.address %></h6>
-    <h6>Rating: <%= current_user.rating.round(1) %></h6>
+    <% if current_user.rating != nil %>
+      <h6>Rating: <%= current_user.rating.round(1) %></h6>
+    <% end %>
     <h6>Bought items: <%= @purchases.length %></h6>
     <h6>Sold items: <%= @sold_listings.length %></h6>
     <% if @sales != nil %>
