@@ -22,11 +22,11 @@
           <h6 class="card-text">Price: $<%= l.price %></h6></br>
           <% if current_user %>
               <% if current_user.id == l.user_id %>
-                <%= (link_to "Edit", edit_listing_path(l.id), :class => "btn btn-primary" )  %>
-                <%= (link_to "Delete", listing_path(l.id), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary")  %>
+                <%= (link_to "Edit", edit_listing_path(l.id), :class => "btn btn-primary button" )  %>
+                <%= (link_to "Delete", listing_path(l.id), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary button")  %>
               <% end %>
           <% end %>
-        <%= (link_to "Show", listing_path(l.id), :class => "btn btn-primary") %>
+        <%= (link_to "Show", listing_path(l.id), :class => "btn btn-primary button") %>
         </div>
      </div>
    <% end %>

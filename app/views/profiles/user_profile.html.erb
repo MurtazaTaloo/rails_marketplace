@@ -1,4 +1,4 @@
-<%= link_to "Sell an Item", listings_type_selection_path, :class => "btn btn-primary" %>
+<%= link_to "Sell an Item", listings_type_selection_path, :class => "btn btn-primary button" %>
 <div class="main-container">
   <div class="user-profile">
     <h1>User Profile:<h1>
@@ -29,8 +29,8 @@
             <div class="card-body">
               <h6 class="card-title"><%= l.title %></br></h6>
               <h6 class="card-text">$<%= l.price %></br></h6>
-              <%= (link_to "View", listing_path(l.id), :class => "btn btn-primary") %>
-              <%= (link_to "Delete", listing_path(l.id), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary")  %>
+              <%= (link_to "View", listing_path(l.id), :class => "btn btn-primary button") %>
+              <%= (link_to "Delete", listing_path(l.id), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary button")  %>
           <% end %>
             </div>
         </div>
@@ -51,9 +51,9 @@
             <h6 class="card-title"><%= listing.title %></h6>
             <h6 class="card-text">$<%= listing.price %></br></h6>
             <% if listing.rated_status != true %>
-              <%= link_to "Rate the seller of this listing", profiles_user_profile_rate_seller_path(user: listing.user, listing_id: listing.id), :class => "btn btn-primary" %>
+              <%= link_to "Rate the seller of this listing", profiles_user_profile_rate_seller_path(user: listing.user, listing_id: listing.id), :class => "btn btn-primary button" %>
             <% end %>
-            <%= (link_to "View", listing_path(listing.id), :class => "btn btn-primary") %>
+            <%= (link_to "View", listing_path(listing.id), :class => "btn btn-primary button") %>
         <% end %>
         </div>
       </div>
@@ -76,7 +76,7 @@
           <div class="card-body">
             <h6 class="card-title"><%= listing.title %></h6>
             <h6 class="card-text">$<%= listing.price %></h6>
-            <%= (link_to "Show", listing_path(listing.id), :class => "btn btn-primary") %>
+            <%= (link_to "Show", listing_path(listing.id), :class => "btn btn-primary button") %>
           <% end %>
           </div>
         </div>
@@ -84,4 +84,4 @@
     </div>
   </div>
 </div>
-<%
+

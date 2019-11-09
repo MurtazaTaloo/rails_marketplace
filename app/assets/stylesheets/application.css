@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ :root {
+   --theme: rgb(98, 207, 53);
+ }
 
  .index-pix{
    height: 200px;
@@ -44,6 +47,10 @@
 
 
 .nav{
-  background: rgb(51, 110, 65) !important;
+  background: var(--theme) !important;
 }
 
+.button{
+  background: var(--theme) !important;
+  border: none;
+}
