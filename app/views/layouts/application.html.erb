@@ -33,9 +33,14 @@
       <li class="nav-item">
         <%= link_to "Shop", listings_path, :class => "nav-link" %>
       </li>
-       <li class="nav-item">
-        <%= link_to "User_Profile", profiles_user_profile_path, :class => "nav-link" %>
+      <% if current_user %>
+        <li class="nav-item">
+            <%= link_to "User_Profile", profiles_user_profile_path, :class => "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sell", listings_type_selection_path, :class => "nav-link" %>
       </li>
+      <% end %>
   </div>
 </nav>
 
