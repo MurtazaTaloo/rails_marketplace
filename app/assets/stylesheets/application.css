@@ -34,7 +34,7 @@
   margin-right: 20px;
 }
 .card:hover{
-  /* transform: scale(1.01); */
+
   box-shadow: -1px 2px 14px 0px rgba(0,0,0,0.42);
 }
 
@@ -42,16 +42,8 @@
   background: rgb(210, 218, 202);
 }
 
-/* .container{
-  height: 60vh;
-  box-shadow: -1px 2px 14px 0px rgba(0,0,0,0.42);
-} */
 
 .nav{
   background: rgb(51, 110, 65) !important;
 }
 
-
-/* .form{
-  margin-left: 20px;
-} */
