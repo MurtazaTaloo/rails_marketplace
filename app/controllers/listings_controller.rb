@@ -23,7 +23,7 @@ class ListingsController < ApplicationController
   def create
     @listing = current_user.listings.new(listing_params)
     if @listing.save
-      redirect_to listings_path
+      redirect_to listing_path(@listing.id)
     else
       render :new
     end
@@ -67,8 +67,12 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing = Listing.find(params[:id])
-    @listing.destroy
-    redirect_to listings_path
+    if current_user.id == Listing.find(params[:id]).user.id
+      @listing.destroy
+      redirect_to profiles_user_profile_path
+    else 
+      redirect_to root_path
+    end
   end
 
   def type_selection
