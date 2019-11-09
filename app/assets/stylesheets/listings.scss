@@ -17,11 +17,13 @@
 }
 
 .listing-index{
-  background: lightcoral;
+  // background: lightcoral;
   display: flex;
+  flex-direction: row;
+  // flex-wrap: wrap;
+  // flex-direction: row;
   // justify-content: left;
   // justify-content: space-evenly;
-  flex-wrap: wrap;
 }
 
 // .card-width{
