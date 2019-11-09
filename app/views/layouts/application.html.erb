@@ -5,7 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,13 +19,33 @@
   <body>
   <% if user_signed_in? %>
     <%= link_to "logout", destroy_user_session_path, :class => "btn btn-secondary active", method: :delete %>
-    <h6>User name:<%= current_user.name %><h6>
+    <h6>User: <%= current_user.email %><h6>
   <% else %>
     <%= link_to "login", new_user_session_path, :class => "btn btn-secondary active" %>
   <% end %>
-  <%= link_to "Home", pages_home_path, :class => "btn btn-primary" %>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light nav">
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", pages_home_path, :class => "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Shop", listings_path, :class => "nav-link" %>
+      </li>
+       <li class="nav-item">
+        <%= link_to "User_Profile", profiles_user_profile_path, :class => "nav-link" %>
+      </li>
+  </div>
+</nav>
+
+  <%
+=begin%>
+ <%= link_to "Home", pages_home_path, :class => "btn btn-primary" %>
   <%= link_to "Shop", listings_path, :class => "btn btn-primary" %>
-  <%= link_to "User_Profile", profiles_user_profile_path, :class => "btn btn-primary" %>
+  <%= link_to "User_Profile", profiles_user_profile_path, :class => "btn btn-primary" %> 
+<%
+=end%>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

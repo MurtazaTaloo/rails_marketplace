@@ -6,3 +6,24 @@
   margin-left: 20px;
 }
 
+.show-pic{
+  max-height: 450px;
+}
+
+.show-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.listing-index{
+  background: lightcoral;
+  display: flex;
+  // justify-content: left;
+  // justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+// .card-width{
+//   width: 25%;
+// }

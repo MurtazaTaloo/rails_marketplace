@@ -28,6 +28,7 @@
   height: 300px;
 }
 .card{
+  height: 500px;
   min-height: 300px;
   min-width: 300px;
   margin-right: 20px;
@@ -41,37 +42,15 @@
   background: rgb(210, 218, 202);
 }
 
-.container{
+/* .container{
   height: 60vh;
   box-shadow: -1px 2px 14px 0px rgba(0,0,0,0.42);
-}
-
-/* .container-fluid{
-  display: flex;
-  overflow-x: auto;
-  justify-content: space-between;
-}
-
-
-.main-container{
-  display: grid;
-  grid-template-columns: 20% auto;
-  overflow: hidden;
-
-}
-
-.user-profile{
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 80vh;
-  position: -webkit-sticky;
-  position: sticky;
-}
-.listings-container{
-  overflow: scroll;
 } */
+
+.nav{
+  background: rgb(51, 110, 65) !important;
+}
+
 
 /* .form{
   margin-left: 20px;

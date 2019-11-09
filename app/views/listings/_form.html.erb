@@ -1,0 +1,67 @@
+<% if @listing.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being created:</h4>
+    <ul>
+    <% @listing.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="form">
+  <%= form_with(model: listing, local: true) do |form| %>
+
+
+      <div class="form-group">
+          <%= form.label :title %>
+          </br>
+          <%= form.text_field :title %>
+      </div>
+      <div class="form-group">
+          <%= form.label :description %></br>
+          <%= form.text_area :description %>
+      </div>
+      <div class="form-group">
+          <%= form.label :price %></br>
+          <%= form.number_field :price %>
+      </div>
+
+
+      <%
+=begin%>
+ only show these fields (in if-else statement) if the user doesn't chose to create a bundle listing 
+<%
+=end%>
+      <% if @bundle == false %>
+        
+        <div class="form-group">
+            <%= form.label :category_id %></br>
+            <%= form.select :category_id,
+          options_for_select( Category.all.collect { |c| [c.name, c.id] }, :selected => @listing.category_id ) %>
+        </div>
+
+          <div class="form-group">
+            <%= form.label :brand_id %></br>
+            <%= form.select :brand_id,
+          options_for_select( Brand.all.collect { |b| [b.name, b.id] }, :selected => @listing.brand_id ) %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+          <%= form.label :size_id %></br>
+          <%= form.select :size_id,
+      options_for_select( Size.all.collect { |s| [s.name, s.id] }, :selected => @listing.size_id ) %>
+      </div></br>
+
+      <div class="form-group"> 
+          <%= form.label :picture %>
+          <%= form.file_field :pictures, accept: 'image/png, image/gif, image/jpeg, image/jpg', multiple: true %>
+      </div> 
+
+
+      <div class="form-group">
+          <%= form.submit"Create", :class => "btn btn-primary" %>
+      </div>
+  <% end %>
+</div>

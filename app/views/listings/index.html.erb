@@ -1,21 +1,20 @@
-<h1>Listings#index</h1>
+
  <% @listings.each do |l| %>
-    <div class="container-fluid">
+    <div class="listing-index">
     <%
 =begin%>
  don't show listings if their sold_status is "true"     
 <%
 =end%>
     <% if !l.sold_status %>
-      <div class="card" style="width: 18rem;">
+      <div class="card card-width" style="width: 18rem;">
         <% l.pictures.each do |pic|
         %>
         <%= image_tag  pic,class:"show-image card-img-top" %>
+        <% break %>
         <% end %>
         <div class="card-body">
         <h4 class="card-title"><%= l.title %></h4>
-        <h4 class="card-title"><%= l.id %></h4>
-        <h6 class="card-text"><%= l.description %></h6>
         <h6 class="card-text"><%= l.price %></h6></br>
         <% if current_user %>
           <% if current_user.id == l.user_id %>
@@ -24,8 +23,8 @@
           <% end %>
         <% end %>
         <%= (link_to "Show", listing_path(l.id), :class => "btn btn-primary") %>
-    <% end %>
-    </div>
-  </div>
- <% end %> 
+       <% end %>
+     </div>
+   </div>
  </div>
+ <% end %> 

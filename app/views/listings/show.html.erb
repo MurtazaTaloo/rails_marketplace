@@ -1,29 +1,8 @@
+
+
 <%
 =begin%>
- <h1>Listings#show</h1>
-
- <div class="container">
-  <div class="details">
-<%= @listing.title %>
-<%= @listing.description %>
-<%= @listing.price %>
-
-</br>
-
-<%= link_to "Buy it",  listing_path(id: @listing.id, sold_status: true), method: :put, class:"btn btn-primary" %> 
-</div>
-
-  <div class="pic">
-<% @listing.pictures.each do |pic| %>
-  <%= image_tag  pic,class:"show-image", class:"index-pix" %>
-<% end %>
- </div>
-</div> 
-<%
-=end%>
-
-
-<div class="container" id="product-section">
+ <div class="container" id="product-section">
   <div class="row">
    <div class="col-md-5">
     <% @listing.pictures.each do |pic| %>
@@ -35,8 +14,8 @@
 
     <div class="row">
       <div class="col-md-20">
-      <h1><%= @listing.title %></h1>
-    </div>
+        <h1><%= @listing.title %></h1>
+      </div>
     </div>
 
     <div class="row">
@@ -59,4 +38,58 @@
   <% end %>
    </div>
   </div>
- </div>
+ </div> 
+<%
+=end%>
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-5">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <% @listing.pictures.each do |pic| %>
+               <%= image_tag  pic,class:"show-image", class:"d-block w-100 show-pic" %>
+              <% break %>
+              <% end %>
+            </div>
+            <% counter = 1 %>
+            <% until counter == @listing.pictures.length %>
+              <div class="carousel-item">
+                <%= image_tag  @listing.pictures[counter],class:"show-image", class:"d-block w-100 show-pic" %>
+              </div>
+              <% counter += 1%>
+            <% end %>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-7 show-details">
+          <h2><%=@listing.title%></h2>
+          <p><%=@listing.description%></p>
+
+          <% if @listing.brand != nil %>
+           <h4>Brand: <%=@listing.brand.name%></h4>
+          <% end %>
+
+          <% if @listing.category != nil %>
+           <h4>Category: <%= @listing.category.name %></h4>
+          <% end %>
+
+          <h4>Size: <%=@listing.size.name%></h4>
+          <h2>$<%=@listing.price%></h2>
+          <% if current_user.id != @listing.user.id && @listing.sold_status != true %>
+          <%= link_to "Buy it",  listing_path(id: @listing.id, sold_status: true), method: :put, class:"btn btn-primary" %>
+          <% end %>
+      </div>
+  </div>
+</div>
+
