@@ -15,8 +15,11 @@
           <% break %>
         <% end %>
         <div class="card-body">
-          <h4 class="card-title"><%= l.title %></h4>
-          <h6 class="card-text">$<%= l.price %></h6></br>
+          <h6 class="card-title"><%= l.title %></h6>
+          <% if l.user.rating %>
+            <h5 class="card-text">Seller Rating: <%= l.user.rating.round(1) %></h5>
+          <% end %>  
+          <h6 class="card-text">Price: $<%= l.price %></h6></br>
           <% if current_user %>
               <% if current_user.id == l.user_id %>
                 <%= (link_to "Edit", edit_listing_path(l.id), :class => "btn btn-primary" )  %>
