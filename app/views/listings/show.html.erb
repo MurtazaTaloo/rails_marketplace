@@ -5,10 +5,13 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <% @listing.pictures.each do |pic| %>
+                <%-# going through the array of pictures for a listing and only showing the first one as active image of the listing hence using break after the very first itteration -%> 
                <%= image_tag  pic,class:"show-image", class:"d-block w-100 show-pic" %>
               <% break %>
               <% end %>
             </div>
+
+            <%-# going through the array of pictures for a listing and showing all the pictures except first picture when user slides to see more pictures as first one is already showed as an active image hence counter starting from 1 and not 0 -%>
             <% counter = 1 %>
             <% until counter == @listing.pictures.length %>
               <div class="carousel-item">
@@ -31,19 +34,24 @@
           <h2><%=@listing.title%></h2>
           <p><%=@listing.description%></p>
 
+          <%-# show the brand name if exists -%>
           <% if @listing.brand != nil %>
            <h4>Brand: <%=@listing.brand.name%></h4>
           <% end %>
 
+          <%-# show the category name if exists -%>
           <% if @listing.category != nil %>
            <h4>Category: <%= @listing.category.name %></h4>
           <% end %>
 
           <h4>Size: <%=@listing.size.name%></h4>
           <h2>$<%=@listing.price%></h2>
+
+          <%-# show the buy button if listing belongs to someone other than the current user and if the sold status of listing isn't true -%>
           <% if current_user.id != @listing.user.id && @listing.sold_status != true %>
           <%= link_to "Buy Now",  listing_path(id: @listing.id, sold_status: true), method: :put, class:"btn btn-primary button" %>
           <% end %>
+          <%-# when user hits the buy button sold_status: true is sent as a parameter which turns the sold_status of listing to true -%>
       </div>
   </div>
 </div>

@@ -17,10 +17,14 @@
   </div>
 
   <div class="listings-container">
+    <%-# Displaying all the current listing for sale by the current user-%>
     <h1>Current Listings:<h1>
     <div class="container-fluid">
+      <%-# displaying all the current listings stored in @current_listings array -%>
       <% @current_listings.each do |l| %>
         <div class="card" style="width: 18rem;">
+
+          <%-# checking if the listing is nil as old deleted listings turns to nil and throws an error of calling method on nil class -%>
           <% if l != nil %>
             <% l.pictures.each do |pic| %>
               <%= image_tag  pic,class:"show-image card-img-top" %>
@@ -38,6 +42,8 @@
     </div>
     </br></br>
 
+
+    <%-# Displaying all the purchased listings by the current user-%>
     <h1>Purchases:<h1>
     <div class="container-fluid">
     <% @purchases.each do |listing| %>
@@ -50,6 +56,8 @@
           <div class="card-body">
             <h6 class="card-title"><%= listing.title %></h6>
             <h6 class="card-text">$<%= listing.price %></br></h6>
+
+            <%-# show the button to rate seller of the purchased listing of that particular listing hasn't been rated already -%>
             <% if listing.rated_status != true %>
               <%= link_to "Rate the seller of this listing", profiles_user_profile_rate_seller_path(user: listing.user, listing_id: listing.id), :class => "btn btn-primary button" %>
             <% end %>
@@ -63,7 +71,7 @@
     </br></br>
 
 
-
+    <%-# Displaying all the lisings sold by the current user-%>
     <h1>Sold Listings:<h1>
     <div class="container-fluid">
       <% @sold_listings.each do |listing|%>

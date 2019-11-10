@@ -1,12 +1,14 @@
-<h1>This is from rate user page<h1>
+<h1>Please chose the rating for the seller of this listing<h1>
 
 <%= form_with(model: @user, url: rate_seller_path, local: true) do |form| %>
 
  <div>
+    <%-# user choses the rating for seller between 1 and 5 -%>
     <%= form.label :rating_scores_array %></br>
       <%= form.select :rating_scores_array, options_for_select(1..5) %>
   </div></br> 
 
+  <%-# sending through user and listing id as hidden fields of the form -%>
   <%= form.hidden_field :user_id, :value => params[:user]%>
 
   <%= form.hidden_field :listing_id, :value => params[:listing_id]%>

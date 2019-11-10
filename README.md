@@ -76,7 +76,7 @@ As Seller:
 - I would like to able to track and manage all my activities from one page so I don't waste time looking for important stuff.
 - I would like to be able to sell an individual dress or a bundle/bag of dresses.
 - I would like to see my current itmes for sale, the items I have sold and the items I have purchased so I can have a record of my acitivy on the platform.
-- I want to quickly see my total spendings and earnings in $ amount so I know how much I am benefiting by using this platform.
+- I want to quickly see my total earnings in $ amount so I know how much I am benefiting by using this platform.
 <!-- - I want a simple process to delete my account from the platform. -->
 <!-- - I would like to see rating score of my individual listings so I know how to improve. -->
 - 

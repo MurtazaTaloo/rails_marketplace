@@ -1,12 +1,7 @@
 <div class="listing-index">
   <% @listings.each do |l| %>
-    
-
-   <%
-=begin%>
- don't show listings if their sold_status is "true"      
-<%
-=end%>
+     
+ <%-# don't show listings if their sold_status is "true" -%>  
     <% if !l.sold_status %>
       <div class="card card-width" style="width: 18rem;">
         <% l.pictures.each do |pic|
@@ -21,6 +16,7 @@
           <% end %>  
           <h6 class="card-text">Price: $<%= l.price %></h6></br>
           <% if current_user %>
+          <%-# show the edit and delte links for listings only of the listing belongs to the current user -%> 
               <% if current_user.id == l.user_id %>
                 <%= (link_to "Edit", edit_listing_path(l.id), :class => "btn btn-primary button" )  %>
                 <%= (link_to "Delete", listing_path(l.id), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary button")  %>

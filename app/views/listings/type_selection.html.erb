@@ -2,5 +2,7 @@
 
 <%= link_to "Sell a dress", new_listing_path(bundle: false), class:"btn btn-primary button" %>
 
+
+<%-# if user choses to sell a bundle of dresses then (bundle: true) is sent as a parameter which renders a form with different fields to the user -%> 
 <%= link_to "Sell a bundle", new_listing_path(bundle: true), class:"btn btn-primary button" %>
 
