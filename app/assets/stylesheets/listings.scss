@@ -22,7 +22,17 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.type-selection{
+  display: flex;
+  justify-content: space-around;
+}
 
+.type-selection-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
 // .card-width{
 //   width: 25%;
 // }

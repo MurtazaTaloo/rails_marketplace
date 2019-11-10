@@ -1,8 +1,21 @@
-<h1>This is from Listing type selection</h1>
 
-<%= link_to "Sell a dress", new_listing_path(bundle: false), class:"btn btn-primary button" %>
+<div class="type-selection">
+
+<div class="card card-width" style="width: 18rem;">
+  <%= image_tag("/assets/type_selection_dress.jpeg",  alt: "Selection photo", class: "card-img-top") %>
+  <div class="card-body">
+    <%= link_to "Sell a dress", new_listing_path(bundle: false), class:"btn btn-primary button type-selection-button" %>
+  </div>
+</div>
+
 
 
 <%-# if user choses to sell a bundle of dresses then (bundle: true) is sent as a parameter which renders a form with different fields to the user -%> 
-<%= link_to "Sell a bundle", new_listing_path(bundle: true), class:"btn btn-primary button" %>
+<div class="card card-width" style="width: 18rem;">
+  <%= image_tag("/assets/type_selection_bundle.jpeg",  alt: "Selection photo", class: "card-img-top") %>
+  <div class="card-body">
+   <%= link_to "Sell a bundle", new_listing_path(bundle: true), class:"btn btn-primary button type-selection-button" %>
+  </div>
+</div>
 
+</div>
