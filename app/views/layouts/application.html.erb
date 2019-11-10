@@ -31,17 +31,17 @@
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", pages_home_path, :class => "nav-link" %>
+        <%= link_to "Home", pages_home_path, :class => "nav-link nav-text" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Shop", listings_path, :class => "nav-link" %>
+        <%= link_to "Shop", listings_path, :class => "nav-link nav-text" %>
       </li>
       <% if current_user %>
         <li class="nav-item">
-            <%= link_to "User_Profile", profiles_user_profile_path, :class => "nav-link" %>
+            <%= link_to "User_Profile", profiles_user_profile_path, :class => "nav-link nav-text" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sell", listings_type_selection_path, :class => "nav-link" %>
+          <%= link_to "Sell", listings_type_selection_path, :class => "nav-link nav-text" %>
       </li>
       <% end %>
   </div>

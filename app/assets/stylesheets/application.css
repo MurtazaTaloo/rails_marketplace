@@ -14,7 +14,7 @@
  *= require_self
  */
  :root {
-   --theme: rgb(98, 207, 53);
+   --theme: rgb(215, 99, 118)
  }
 
  .index-pix{
@@ -48,6 +48,10 @@
 
 .nav{
   background: var(--theme) !important;
+}
+
+.nav-text{
+  color: white !important;
 }
 
 .button{

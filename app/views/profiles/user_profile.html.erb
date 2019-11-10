@@ -34,6 +34,7 @@
               <h6 class="card-title"><%= l.title %></br></h6>
               <h6 class="card-text">$<%= l.price %></br></h6>
               <%= (link_to "View", listing_path(l.id), :class => "btn btn-primary button") %>
+              <%= (link_to "Edit", edit_listing_path(l.id), :class => "btn btn-primary button" )  %>
               <%= (link_to "Delete", listing_path(l.id), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary button")  %>
           <% end %>
             </div>
