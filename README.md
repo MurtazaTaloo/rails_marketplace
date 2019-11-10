@@ -1,6 +1,6 @@
 
 
-R7 Identification of the problem you are trying to solve by building this particular marketplace app.
+R7: Identification of the problem you are trying to solve by building this particular marketplace app.
 
 
 I am building this marketplace to let people buy and sell second hand clothes. Upon searching I didn't come across any marketplace which is purely dedicated to dealing in second hand clothes even though it is a multi billion dollar market. Ideally such a marketplace should deal in used clothes for all ages but to start with this matketplace would only deal with clothes for kids as they quickly grow out of their clothes and need new clothes.
@@ -8,14 +8,14 @@ I am building this marketplace to let people buy and sell second hand clothes. U
 
 
 
-R8 Why is it a problem that needs solving?
+R8: Why is it a problem that needs solving?
 
 We are living in times of excessive consumerism at the cost of our home which we all call planet earth. Climate change is real???. But not many people are doing much about it. We are producing more consumer goods than ever did. So far we have been accusing big businesses and corporations so employ environmentally friendly production paractises which has shown no improvment. I think we should be focussing on the other end of this spectrum which is equally responsible for this issue which is consumers. 
 We should focus all the resources to create awareness in people about this deadly climate change and the things causing it. This is a small effort towards encouraging people to reduce thier carbon footprint by trading thier clothes on a market place which only deals in used clothes.
 
 
 
-R11 Description of your marketplace app (website), including:
+R11: Description of your marketplace app (website), including:
 - Purpose
 - Functionality / features
 - Sitemap
@@ -67,8 +67,6 @@ As Buyer:
 - I would like to see the pictures of the products before I buy them to avoid surprises when I receive products.
 - I want to see the rating score of sellers on the platform so I can make a good buying decision.
 - I want to be able to rate the sellers of my products so I can provide a quick feedback about my experience.
-<!-- - I want to see how much I am spending on the platform so I can better track my spending habits. -->
-<!-- - I want to be able to sort and filter the items availabel on the market -->
 - I want to see all my purchases in one place so I can keep the record of all the things I have bought.
 
 As Seller:
@@ -77,8 +75,6 @@ As Seller:
 - I would like to be able to sell an individual dress or a bundle/bag of dresses.
 - I would like to see my current itmes for sale, the items I have sold and the items I have purchased so I can have a record of my acitivy on the platform.
 - I want to quickly see my total earnings in $ amount so I know how much I am benefiting by using this platform.
-<!-- - I want a simple process to delete my account from the platform. -->
-<!-- - I would like to see rating score of my individual listings so I know how to improve. -->
 - 
 
 
