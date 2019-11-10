@@ -28,6 +28,7 @@ class ListingsController < ApplicationController
       #if the brand is nil then it turns the bundle field to true for that listing as brand and category aren't taken as user input when creating a bundle listing
       if @listing.brand == nil
         @listing.bundle = true
+        @listing.save
       end
       redirect_to listing_path(@listing.id)
     else
